@@ -1,3 +1,4 @@
+//A lot of unused functions used while testing to see the most effective sotware organization
 /*Components
  * Servo Motor = Tail
  * Motors (Use an H bridge to make forward and backwards
@@ -15,13 +16,13 @@
   * 1. ULTRASONIC
   *   a. GLUE ultrasonic                    (D)
   *   b. TEST ultrasonic data               (D)
-  *   c. TEST ultrasonic with program       (ND)
+  *   c. TEST ultrasonic with program       (D)
   *   
   * 2. Buzzer, LED, and Servo
   *   a. CONNECT buzzer                     (D)
   *   b. CONNECT LED                        (D)
   *   c. GLUE Servo                         (D)
-  *   b. TEST components with program       (ND)
+  *   b. TEST components with program       (D)
   *   
   * 3. Side Dispenser
   *   a. BUILD the attachment               (D)
@@ -83,7 +84,7 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   drive('f', defaultSpeed, defaultSpeed);
-  Serial.println(distance);
+  /*Serial.println(distance);
   findDistance();
   
   if(distance < distanceThreshold) //There is something in front
@@ -95,7 +96,8 @@ void loop() {
     }
     //checkDistance();
     stopProgram();
-  }
+  }*/
+ checkInFront();
 }
 
 void drive(char dir, int dutyCycleR, int dutyCycleL)
@@ -153,10 +155,6 @@ void stopProgram()
   noTone(audioPin);
   exit(0);
 }
-
-
-
-/*--------------------Unused Functions---------------------------------------*/
 
 void checkInfront()
 {
